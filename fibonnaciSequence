@@ -1,0 +1,42 @@
+<!-- Small document.write() example with some basic for-loop logic. Adjust 'counter' to increase how far the Fibonacci Sequence will go. --->
+
+<!DOCTYPE html>
+<head>
+    <title>Fibonacci Sequence</title>
+</head>
+<body>
+    <div>
+        <tb>
+            <th>
+                <h1>Fibonacci Sequence</h1>
+            </th>
+            <tr><script> var f1 = "1 - 1"; document.write(f1);</script></tr><br>
+            <tr><script> var f2 = "2 - 1"; document.write(f2);</script></tr><br>
+            <script>
+                var counter = 3;
+                var x = 1;
+                var y = 1;
+                    for (counter; counter <= 30; counter++) {
+                        x = x + y;
+                        y = x - y;
+                        var fNumbers = counter + " - " + x;
+                        document.write(fNumbers);
+                        document.write("<br>");
+                        if (counter > 29) {
+                            break;
+                        }
+                        try {
+                            counter <= 30;
+                        }
+                        catch {
+                            console.log("Something went wrong; the loop should run until the value for counter 30 appears.")
+                        }
+                        finally {
+                            console.log("The loop is finished running successfully!")
+                        }
+                    }
+            </script>
+        </tb>
+    </div>
+</body>
+</html>
