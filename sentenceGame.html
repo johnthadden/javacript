@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <!--All styling and script in one document to make downloading/directory easier.-->
+    <style>
+        /* cyrillic-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4taVQUwaEQbjB_mQ.woff) format('woff');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4kaVQUwaEQbjB_mQ.woff) format('woff');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        /* greek-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4saVQUwaEQbjB_mQ.woff) format('woff');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        /* greek */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4jaVQUwaEQbjB_mQ.woff) format('woff');
+            unicode-range: U+0370-03FF;
+        }
+
+        /* hebrew */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4iaVQUwaEQbjB_mQ.woff) format('woff');
+            unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4vaVQUwaEQbjB_mQ.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVQUwaEQbjB_mQ.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVQUwaEQbjA.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        body {
+            background-color:#e1e1e1;
+            font-family: 'Open Sans';
+            min-height: 100%;
+        }
+
+        #container {
+            padding: 10px;
+            background-color: white;
+            margin: 5%;
+            border-radius: 15px;
+            min-height: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #234f8d;
+            font-size: 5em;
+        }
+
+        h2 {
+            display: inline-block;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 2em;
+        }
+
+        table {
+            width: 100%;
+            color: white;
+        }
+
+        input {
+            background-color: #e1e1e1;
+            margin: auto;
+            width: 100%;
+            border: solid;
+            border-width: 10px;
+            border-color: white;
+            text-align: center;
+            text-transform: lowercase;
+        }
+
+        .td {
+            margin-top: auto;
+            font-size: 4em;
+            color: white;
+        }
+
+        #correct {
+            background-color: #4caf50;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            width: 100%;
+        }
+
+        #space {
+            background-color: #f5b961;
+            height: 1.3em;
+        }
+
+        #hidden {
+            width: 4em;
+            height: 2em;
+            background-color: #4caf50;
+            border-width: 0;
+            color: white;
+            font-size: 1.5em;
+            display: none;
+        }
+
+        #refreshHidden {
+            display: none;        
+        }
+
+        #labelHidden {
+            display: none;
+            width: 100%;
+        }
+
+        #encouragementHidden {
+            display: none;
+            width: 100%;
+        }
+
+        #labelDisplayed {
+            display: contents;
+            margin-bottom: 5em;
+        }
+
+        #displayed {
+            width: 4em;
+            height: 2em;
+            background-color: #4caf50;
+            border-width: 0;
+            color: white;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+    <body id="body">
+        <div id="container">
+            <h1 id="scrambled"></h1>
+            <p>Guess the sentence! Start typing...</p>
+            <p>The yellow blocks are meant for spaces</p>
+
+            <div>
+                <h2>Score: </h2> <h2 id="score" value="1"></h2>
+            </div>
+
+            <table id = "table">
+
+            </table>
+            <label id="encouragementHidden">Great start! Keep going!</label>
+            <br>
+            <button onclick="reload()" id="hidden">Next</button>
+
+            <label id="labelHidden">No mistakes allowed! You can continue 
+                to see how many more you can get right, but please
+                click this button to start the game over!</label>
+            <br>
+            <button onclick="refresh()" id="refreshHidden">Restart</button>
+            </div>
+
+        <script>
+            var score = 0; //setting up score to be incremented
+            var clicked = false; //variable to help control button displayed/or not
+            var url = 'https://api.hatchways.io/assessment/sentences/' + 1; //syntax of url declaration matches the incrementing that will happen in the "reload" function
+
+            //refresh function added to give more intuitive use to user; resets back 'game' beginning
+            function refresh() {
+                document.location.reload(true);
+            }
+
+            //everything before function reload() helps create UI and functionality just on the initial challenge from 
+            fetch(url)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    const sentence = data;
+                    const string = sentence.data.sentence;
+                    document.getElementById("score").innerHTML = score;
+                    const stringArray = string.split(' '); //creates an array of strings where each index is one full word from JSON sentence data
+                    let arrayToTest = string.toLowerCase().split(''); //creates string array of each individual character
+                    arrayToTest = arrayToTest.filter(function(a){return a !== ' '}); //after removing the 'space' characters, the exact character array is ready to be compared to exact user input array
+                    const scrambledString = [];
+
+                    function shuffleArray(array) { //scramble function that will be used on each word; maintains first and last letter of each word (which are currently contained at indixes in stringArray)
+                        for (var i = 1; (i < (array.length - 1)); i++) {
+                            var j = Math.floor((Math.random() * i) + 1);
+                            var temp = array[i];
+                            array[i] = array[j];
+                            array[j] = temp;
+                        }
+                        return array;
+                    }
+                    
+                    for (var i = 0; i < stringArray.length; i++) { //creating the rows of the table and assigning tributes for styling needs
+                        const table = document.getElementById("table");
+                        const newRow = table.insertRow(-1);
+                        newRow.setAttribute("id", "row" + i.toString());
+                        newRow.setAttribute("class", "row");
+                        const charArray = stringArray[i].split("");
+
+
+                        for (var j = 0; j <= charArray.length; j++) { //creating the table items in each row and attributes for their styling
+                            const charSpace = document.createElement("input");
+                            charSpace.setAttribute("id", "td" + i.toString() + j.toString());
+                            charSpace.setAttribute("class", "td");
+                            charSpace.setAttribute("maxlength", "1");
+                            const char = document.createTextNode(charArray[j]);
+                            const space = document.createTextNode(" ");
+
+                            if (j < charArray.length) { //if there are more characters in the word we output more input td to type
+                                charSpace.appendChild(char);
+                            } else if (i !== stringArray.length - 1) { //if there are no more characters in the word we output one of the placeholder orange tds
+                                charSpace.setAttribute("id", "space");
+                                charSpace.appendChild(space);
+                            } else {
+                                break; //break the loop at the end of the last word
+                            }
+
+                            const row = document.getElementById("row" + i.toString());
+                            row.appendChild(charSpace);
+                        } 
+                        shuffleArray(charArray);
+                        scrambledString.push((charArray).join("")); //pushing scrambled words into placeholder array to be displayed at element id "scrambled"
+                    }
+                    
+                    document.getElementById("scrambled").innerHTML = scrambledString.join(" "); 
+                    var multiplier = 10; //setting up variables to help determine behavior of the direction of user input and the 'dynamic' styling based on if inputArray and arrayToTest match
+                    var inputs = document.getElementsByClassName("td");
+                    const inputArray = [];
+                    var counter = 0;
+
+                    Array.from(inputs).forEach(function(input){
+                        const refreshButton = document.getElementById("refreshHidden"); //button for reloading the entire application if any single letter on any of the ten challenges is inputted incorrectly
+                        const label = document.getElementById("labelHidden");
+                        input.addEventListener("keyup", function(event) { //function defining behavior of each child upon user input
+
+                            if( input.nextSibling !== null) { //what to do when there is either characters left in the word or there is another word after the one currently being inputted by user
+
+                                if (input.value.length == 1 && input.nextElementSibling.id != "space") { //when there are still letters left in that word
+                                    inputArray.push(input.value.toLowerCase());
+                                    input.nextElementSibling.focus();
+
+                                    if (inputArray[counter] === arrayToTest[counter]) {
+                                        input.setAttribute("id", "correct"); //changes id to make background color green
+                                    }
+                                    else  {
+                                        refreshButton.setAttribute("id", "displayed"); //makes refresh button visible
+                                        label.setAttribute("id", "labelDisplayed");
+                                    }
+
+                                } else if (input.nextElementSibling.id == "space"){ //when that was the last letter of the word
+                                    inputArray.push(input.value.toLowerCase());
+                                    document.getElementById("td" + multiplier.toString()).focus();
+                                    multiplier += 10;
+
+                                    if (inputArray[counter] === arrayToTest[counter]) {
+                                        input.setAttribute("id", "correct");
+                                    }
+                                    else  {
+                                        refreshButton.setAttribute("id", "displayed");
+                                        label.setAttribute("id", "labelDisplayed");
+                                    }
+
+                                }
+
+                                counter++;
+                                console;
+
+                            }else { //when that was the last letter of the last word
+                                inputArray.push(input.value.toLowerCase());
+                                if (inputArray[counter] === arrayToTest[counter]) {
+                                    input.setAttribute("id", "correct");
+                                }
+                                else  {
+                                    refreshButton.setAttribute("id", "displayed");
+                                    label.setAttribute("id", "labelDisplayed");
+                                }
+
+                                input.blur() //get user focus away from any input field
+
+                                if (JSON.stringify(inputArray) == JSON.stringify(arrayToTest)) { //to display next button in order to continue to the next challenge
+                                    const buttonID = document.getElementById("hidden");
+                                    buttonID.setAttribute("id", "displayed");
+                                    score++;
+                                    document.getElementById("score").innerHTML = score;
+                                }
+                            }
+
+
+                        });
+                    })
+
+                })
+
+
+                var m = 1; //counter for changing url in fetch call
+                function reload() {//challenges 2 through 10 are essentially created through the reload() function
+                    const buttonID = document.getElementById("displayed");//getting rid of elements from the previous challenge
+                    buttonID.setAttribute("id", "hidden");
+                    document.getElementById("table").innerHTML = "";
+                    m++;
+
+                    if (m == 11) { //what to do when all ten challenges have been completed successfully
+                        document.getElementById("body").style.paddingTop = "50%";
+                        document.getElementById("container").innerHTML = "You win!";
+                    }else {
+                        fetch('https://api.hatchways.io/assessment/sentences/' + m)
+                            .then((response) => {
+                                return response.json();
+                            })
+                            .then((data) => {
+                                let sentence = data;
+                                let string = sentence.data.sentence;
+
+                                document.getElementById("score").innerHTML = score;
+                                const stringArray = string.split(' ');
+                                let arrayToTest = string.toLowerCase().split('');
+                                arrayToTest = arrayToTest.filter(function(a){return a !== ' '});
+                                const scrambledString = [];
+
+                                function shuffleArray(array) {
+                                    for (var i = 1; (i < (array.length - 1)); i++) { 
+                                        var j = Math.floor((Math.random() * i) + 1);           
+                                        var temp = array[i];
+                                        array[i] = array[j];
+                                        array[j] = temp;
+                                    }  
+                                    return array;
+                                }
+                                
+                                for (var i = 0; i < stringArray.length; i++) {
+                                    const table = document.getElementById("table");
+                                    const newRow = table.insertRow(-1);
+                                    newRow.setAttribute("id", "row" + i.toString());
+                                    newRow.setAttribute("class", "row");
+                                    const charArray = stringArray[i].split("");
+
+
+                                    for (var j = 0; j <= charArray.length; j++) {
+                                        const charSpace = document.createElement("input");
+                                        charSpace.setAttribute("id", "td" + i.toString() + j.toString());
+                                        charSpace.setAttribute("class", "td");
+                                        charSpace.setAttribute("maxlength", "1");
+                                        charSpace.setAttribute("onkeypress", "return (event.charCode > 64 && event.charCode < 91");
+                                        const char = document.createTextNode(charArray[j]);
+                                        const space = document.createTextNode(" ");
+
+                                        if (j < charArray.length) {
+                                            charSpace.appendChild(char);
+                                        } else if (i !== stringArray.length - 1) {
+                                            charSpace.setAttribute("id", "space");
+                                            charSpace.setAttribute("onkeypress", "return (event.charCode > 64 && event.charCode < 91");
+                                            charSpace.appendChild(space);
+                                        } else {
+                                            break;
+                                        }
+
+                                        const row = document.getElementById("row" + i.toString());
+                                        row.appendChild(charSpace);
+                                    } 
+
+                                    shuffleArray(charArray);
+                                    scrambledString.push((charArray).join(""));
+
+                                }
+                                
+                                document.getElementById("scrambled").innerHTML = scrambledString.join(" ");
+                                var multiplier = 10;
+                                var inputs = document.getElementsByClassName("td");
+                                const inputArray = [];
+                                var counter = 0;
+
+                                Array.from(inputs).forEach(function(input){
+                                    const refreshButton = document.getElementById("refreshHidden");
+                                    const label = document.getElementById("labelHidden");
+
+                                    input.addEventListener("keyup", function(event) {
+
+                                        if( input.nextSibling !== null) {
+
+                                            if (input.value.length == 1 && input.nextElementSibling.id != "space") {
+                                                inputArray.push(input.value.toLowerCase());
+                                                input.nextElementSibling.focus();
+
+                                                if (inputArray[counter] === arrayToTest[counter]) {
+                                                    input.setAttribute("id", "correct");
+                                                }
+                                                else  {
+                                                    refreshButton.setAttribute("id", "displayed");
+                                                    label.setAttribute("id", "labelDisplayed");
+                                                }
+
+                                            } else if (input.nextElementSibling.id == "space"){
+                                                inputArray.push(input.value.toLowerCase());
+                                                document.getElementById("td" + multiplier.toString()).focus();
+                                                multiplier += 10;
+                                                if (inputArray[counter] === arrayToTest[counter]) {
+                                                    input.setAttribute("id", "correct")  ;
+                                                }
+                                                else  {
+                                                    refreshButton.setAttribute("id", "displayed");
+                                                    label.setAttribute("id", "labelDisplayed");
+                                                }
+
+                                            }
+
+                                            counter++
+                                            console
+
+                                        }else {
+                                            inputArray.push(input.value.toLowerCase());
+                                            if (inputArray[counter] === arrayToTest[counter]) {
+                                                input.setAttribute("id", "correct");
+                                            }
+                                            else  {
+                                                refreshButton.setAttribute("id", "displayed");
+                                                label.setAttribute("id", "labelDisplayed");
+                                            
+                                            }
+                                            input.blur()
+
+                                            if (JSON.stringify(inputArray) == JSON.stringify(arrayToTest)) {
+                                                const buttonID = document.getElementById("hidden");
+                                                buttonID.setAttribute("id", "displayed");
+                                                score++;
+                                                document.getElementById("score").innerHTML = score;
+                                            }
+                                        }
+
+                                    });
+                                })
+
+                            })
+                        }  
+
+                    }
+
+        </script>
+    </body>
+</html>
